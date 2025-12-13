@@ -6,7 +6,7 @@ export const mockUsers = [
     password: "admin123",
     name: "Rupesh",
     role: "admin",
-    avatar: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&h=150&fit=crop&crop=face",
+    avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop&crop=face",
     permissions: ["all"],
   },
   {
@@ -24,14 +24,14 @@ export const mockUsers = [
     password: "facilitator123",
     name: "Amarathana Shree",
     role: "facilitator",
-    avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop&crop=face",
+    avatar: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=150&h=150&fit=crop&crop=face",
     permissions: ["manage_courses", "grade_assignments", "create_tests"],
   },
   {
     id: "4",
     email: "trainee@company.com",
     password: "trainee123",
-    name: "Emily Johnson",
+    name: "Priya Sharma",
     role: "trainee",
     avatar: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=150&h=150&fit=crop&crop=face",
     permissions: ["view_courses", "take_tests", "submit_assignments"],
@@ -40,7 +40,7 @@ export const mockUsers = [
     id: "5",
     email: "manager@company.com",
     password: "manager123",
-    name: "David Williams",
+    name: "Vikram Patel",
     role: "manager",
     avatar: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=150&h=150&fit=crop&crop=face",
     permissions: ["view_analytics", "view_reports", "manage_strategy"],
@@ -49,27 +49,27 @@ export const mockUsers = [
 
 // Mock Trainees
 export const mockTrainees = [
-  { id: "t1", name: "Emily Johnson", email: "emily.j@trainee.com", avatar: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=150&h=150&fit=crop&crop=face", currentWeek: 2, totalWeeks: 12, progress: 18, course: "Full Stack", track: "React Development", lastActivity: "2 hours ago", avgScore: 87, status: "active" },
-  { id: "t2", name: "James Wilson", email: "james.w@trainee.com", avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop&crop=face", currentWeek: 5, totalWeeks: 12, progress: 42, course: "Core Stack", track: "Python Backend", lastActivity: "1 hour ago", avgScore: 92, status: "active" },
-  { id: "t3", name: "Sophia Brown", email: "sophia.b@trainee.com", avatar: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150&h=150&fit=crop&crop=face", currentWeek: 8, totalWeeks: 12, progress: 68, course: "AI-ML", track: "Machine Learning", lastActivity: "30 mins ago", avgScore: 95, status: "active" },
-  { id: "t4", name: "Liam Davis", email: "liam.d@trainee.com", avatar: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&h=150&fit=crop&crop=face", currentWeek: 3, totalWeeks: 12, progress: 25, course: "Full Stack", track: "Node.js Backend", lastActivity: "4 hours ago", avgScore: 78, status: "active" },
-  { id: "t5", name: "Olivia Martinez", email: "olivia.m@trainee.com", avatar: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&h=150&fit=crop&crop=face", currentWeek: 10, totalWeeks: 12, progress: 85, course: "Core Stack", track: "Data Structures", lastActivity: "1 day ago", avgScore: 88, status: "active" },
-  { id: "t6", name: "Noah Garcia", email: "noah.g@trainee.com", avatar: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=150&h=150&fit=crop&crop=face", currentWeek: 6, totalWeeks: 12, progress: 50, course: "AI-ML", track: "Deep Learning", lastActivity: "3 hours ago", avgScore: 82, status: "active" },
-  { id: "t7", name: "Ava Anderson", email: "ava.a@trainee.com", avatar: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=150&h=150&fit=crop&crop=face", currentWeek: 11, totalWeeks: 12, progress: 92, course: "Full Stack", track: "React Development", lastActivity: "5 mins ago", avgScore: 96, status: "active" },
-  { id: "t8", name: "William Taylor", email: "william.t@trainee.com", avatar: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=150&h=150&fit=crop&crop=face", currentWeek: 4, totalWeeks: 12, progress: 33, course: "Core Stack", track: "Python Backend", lastActivity: "6 hours ago", avgScore: 74, status: "active" },
-  { id: "t9", name: "Isabella Thomas", email: "isabella.t@trainee.com", avatar: "https://images.unsplash.com/photo-1517841905240-472988babdf9?w=150&h=150&fit=crop&crop=face", currentWeek: 7, totalWeeks: 12, progress: 58, course: "AI-ML", track: "Machine Learning", lastActivity: "2 days ago", avgScore: 89, status: "inactive" },
-  { id: "t10", name: "Benjamin Lee", email: "benjamin.l@trainee.com", avatar: "https://images.unsplash.com/photo-1519345182560-3f2917c472ef?w=150&h=150&fit=crop&crop=face", currentWeek: 9, totalWeeks: 12, progress: 75, course: "Full Stack", track: "Node.js Backend", lastActivity: "1 hour ago", avgScore: 91, status: "active" },
-  { id: "t11", name: "Mia Jackson", email: "mia.j@trainee.com", avatar: "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?w=150&h=150&fit=crop&crop=face", currentWeek: 1, totalWeeks: 12, progress: 8, course: "Core Stack", track: "Data Structures", lastActivity: "Just now", avgScore: 0, status: "active" },
-  { id: "t12", name: "Ethan White", email: "ethan.w@trainee.com", avatar: "https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?w=150&h=150&fit=crop&crop=face", currentWeek: 12, totalWeeks: 12, progress: 98, course: "AI-ML", track: "Deep Learning", lastActivity: "10 mins ago", avgScore: 94, status: "active" },
-  { id: "t13", name: "Charlotte Harris", email: "charlotte.h@trainee.com", avatar: "https://images.unsplash.com/photo-1502823403499-6ccfcf4fb453?w=150&h=150&fit=crop&crop=face", currentWeek: 5, totalWeeks: 12, progress: 42, course: "Full Stack", track: "React Development", lastActivity: "8 hours ago", avgScore: 86, status: "active" },
-  { id: "t14", name: "Alexander Clark", email: "alex.c@trainee.com", avatar: "https://images.unsplash.com/photo-1463453091185-61582044d556?w=150&h=150&fit=crop&crop=face", currentWeek: 6, totalWeeks: 12, progress: 50, course: "Core Stack", track: "Python Backend", lastActivity: "4 hours ago", avgScore: 79, status: "active" },
-  { id: "t15", name: "Amelia Lewis", email: "amelia.l@trainee.com", avatar: "https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?w=150&h=150&fit=crop&crop=face", currentWeek: 3, totalWeeks: 12, progress: 25, course: "AI-ML", track: "Machine Learning", lastActivity: "12 hours ago", avgScore: 83, status: "active" },
-  { id: "t16", name: "Daniel Robinson", email: "daniel.r@trainee.com", avatar: "https://images.unsplash.com/photo-1507591064344-4c6ce005b128?w=150&h=150&fit=crop&crop=face", currentWeek: 8, totalWeeks: 12, progress: 67, course: "Full Stack", track: "Node.js Backend", lastActivity: "2 hours ago", avgScore: 90, status: "active" },
-  { id: "t17", name: "Harper Walker", email: "harper.w@trainee.com", avatar: "https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=150&h=150&fit=crop&crop=face", currentWeek: 4, totalWeeks: 12, progress: 33, course: "Core Stack", track: "Data Structures", lastActivity: "1 day ago", avgScore: 77, status: "inactive" },
-  { id: "t18", name: "Henry Young", email: "henry.y@trainee.com", avatar: "https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?w=150&h=150&fit=crop&crop=face", currentWeek: 10, totalWeeks: 12, progress: 83, course: "AI-ML", track: "Deep Learning", lastActivity: "30 mins ago", avgScore: 93, status: "active" },
-  { id: "t19", name: "Evelyn King", email: "evelyn.k@trainee.com", avatar: "https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?w=150&h=150&fit=crop&crop=face", currentWeek: 7, totalWeeks: 12, progress: 58, course: "Full Stack", track: "React Development", lastActivity: "5 hours ago", avgScore: 85, status: "active" },
-  { id: "t20", name: "Sebastian Scott", email: "sebastian.s@trainee.com", avatar: "https://images.unsplash.com/photo-1504257432389-52343af06ae3?w=150&h=150&fit=crop&crop=face", currentWeek: 9, totalWeeks: 12, progress: 75, course: "Core Stack", track: "Python Backend", lastActivity: "3 hours ago", avgScore: 88, status: "active" },
-  { id: "t21", name: "Victoria Adams", email: "victoria.a@trainee.com", avatar: "https://images.unsplash.com/photo-1488426862026-3ee34a7d66df?w=150&h=150&fit=crop&crop=face", currentWeek: 11, totalWeeks: 12, progress: 92, course: "AI-ML", track: "Machine Learning", lastActivity: "15 mins ago", avgScore: 97, status: "active" },
+  { id: "t1", name: "Priya Sharma", email: "priya.s@trainee.com", avatar: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=150&h=150&fit=crop&crop=face", currentWeek: 2, totalWeeks: 12, progress: 18, course: "Full Stack", track: "React Development", lastActivity: "2 hours ago", avgScore: 87, status: "active" },
+  { id: "t2", name: "Arjun Reddy", email: "arjun.r@trainee.com", avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop&crop=face", currentWeek: 5, totalWeeks: 12, progress: 42, course: "Core Stack", track: "Python Backend", lastActivity: "1 hour ago", avgScore: 92, status: "active" },
+  { id: "t3", name: "Ananya Gupta", email: "ananya.g@trainee.com", avatar: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150&h=150&fit=crop&crop=face", currentWeek: 8, totalWeeks: 12, progress: 68, course: "AI-ML", track: "Machine Learning", lastActivity: "30 mins ago", avgScore: 95, status: "active" },
+  { id: "t4", name: "Rahul Verma", email: "rahul.v@trainee.com", avatar: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&h=150&fit=crop&crop=face", currentWeek: 3, totalWeeks: 12, progress: 25, course: "Full Stack", track: "Node.js Backend", lastActivity: "4 hours ago", avgScore: 78, status: "active" },
+  { id: "t5", name: "Kavitha Nair", email: "kavitha.n@trainee.com", avatar: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&h=150&fit=crop&crop=face", currentWeek: 10, totalWeeks: 12, progress: 85, course: "Core Stack", track: "Data Structures", lastActivity: "1 day ago", avgScore: 88, status: "active" },
+  { id: "t6", name: "Suresh Kumar", email: "suresh.k@trainee.com", avatar: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=150&h=150&fit=crop&crop=face", currentWeek: 6, totalWeeks: 12, progress: 50, course: "AI-ML", track: "Deep Learning", lastActivity: "3 hours ago", avgScore: 82, status: "active" },
+  { id: "t7", name: "Deepika Menon", email: "deepika.m@trainee.com", avatar: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=150&h=150&fit=crop&crop=face", currentWeek: 11, totalWeeks: 12, progress: 92, course: "Full Stack", track: "React Development", lastActivity: "5 mins ago", avgScore: 96, status: "active" },
+  { id: "t8", name: "Aditya Joshi", email: "aditya.j@trainee.com", avatar: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=150&h=150&fit=crop&crop=face", currentWeek: 4, totalWeeks: 12, progress: 33, course: "Core Stack", track: "Python Backend", lastActivity: "6 hours ago", avgScore: 74, status: "active" },
+  { id: "t9", name: "Sneha Iyer", email: "sneha.i@trainee.com", avatar: "https://images.unsplash.com/photo-1517841905240-472988babdf9?w=150&h=150&fit=crop&crop=face", currentWeek: 7, totalWeeks: 12, progress: 58, course: "AI-ML", track: "Machine Learning", lastActivity: "2 days ago", avgScore: 89, status: "inactive" },
+  { id: "t10", name: "Karthik Rajan", email: "karthik.r@trainee.com", avatar: "https://images.unsplash.com/photo-1519345182560-3f2917c472ef?w=150&h=150&fit=crop&crop=face", currentWeek: 9, totalWeeks: 12, progress: 75, course: "Full Stack", track: "Node.js Backend", lastActivity: "1 hour ago", avgScore: 91, status: "active" },
+  { id: "t11", name: "Meera Krishnan", email: "meera.k@trainee.com", avatar: "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?w=150&h=150&fit=crop&crop=face", currentWeek: 1, totalWeeks: 12, progress: 8, course: "Core Stack", track: "Data Structures", lastActivity: "Just now", avgScore: 0, status: "active" },
+  { id: "t12", name: "Nikhil Desai", email: "nikhil.d@trainee.com", avatar: "https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?w=150&h=150&fit=crop&crop=face", currentWeek: 12, totalWeeks: 12, progress: 98, course: "AI-ML", track: "Deep Learning", lastActivity: "10 mins ago", avgScore: 94, status: "active" },
+  { id: "t13", name: "Lakshmi Venkat", email: "lakshmi.v@trainee.com", avatar: "https://images.unsplash.com/photo-1502823403499-6ccfcf4fb453?w=150&h=150&fit=crop&crop=face", currentWeek: 5, totalWeeks: 12, progress: 42, course: "Full Stack", track: "React Development", lastActivity: "8 hours ago", avgScore: 86, status: "active" },
+  { id: "t14", name: "Sanjay Rao", email: "sanjay.r@trainee.com", avatar: "https://images.unsplash.com/photo-1463453091185-61582044d556?w=150&h=150&fit=crop&crop=face", currentWeek: 6, totalWeeks: 12, progress: 50, course: "Core Stack", track: "Python Backend", lastActivity: "4 hours ago", avgScore: 79, status: "active" },
+  { id: "t15", name: "Divya Pillai", email: "divya.p@trainee.com", avatar: "https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?w=150&h=150&fit=crop&crop=face", currentWeek: 3, totalWeeks: 12, progress: 25, course: "AI-ML", track: "Machine Learning", lastActivity: "12 hours ago", avgScore: 83, status: "active" },
+  { id: "t16", name: "Rohan Mehta", email: "rohan.m@trainee.com", avatar: "https://images.unsplash.com/photo-1507591064344-4c6ce005b128?w=150&h=150&fit=crop&crop=face", currentWeek: 8, totalWeeks: 12, progress: 67, course: "Full Stack", track: "Node.js Backend", lastActivity: "2 hours ago", avgScore: 90, status: "active" },
+  { id: "t17", name: "Pooja Hegde", email: "pooja.h@trainee.com", avatar: "https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=150&h=150&fit=crop&crop=face", currentWeek: 4, totalWeeks: 12, progress: 33, course: "Core Stack", track: "Data Structures", lastActivity: "1 day ago", avgScore: 77, status: "inactive" },
+  { id: "t18", name: "Harish Sundaram", email: "harish.s@trainee.com", avatar: "https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?w=150&h=150&fit=crop&crop=face", currentWeek: 10, totalWeeks: 12, progress: 83, course: "AI-ML", track: "Deep Learning", lastActivity: "30 mins ago", avgScore: 93, status: "active" },
+  { id: "t19", name: "Nandini Bose", email: "nandini.b@trainee.com", avatar: "https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?w=150&h=150&fit=crop&crop=face", currentWeek: 7, totalWeeks: 12, progress: 58, course: "Full Stack", track: "React Development", lastActivity: "5 hours ago", avgScore: 85, status: "active" },
+  { id: "t20", name: "Prashanth Varma", email: "prashanth.v@trainee.com", avatar: "https://images.unsplash.com/photo-1504257432389-52343af06ae3?w=150&h=150&fit=crop&crop=face", currentWeek: 9, totalWeeks: 12, progress: 75, course: "Core Stack", track: "Python Backend", lastActivity: "3 hours ago", avgScore: 88, status: "active" },
+  { id: "t21", name: "Revathi Srinivasan", email: "revathi.s@trainee.com", avatar: "https://images.unsplash.com/photo-1488426862026-3ee34a7d66df?w=150&h=150&fit=crop&crop=face", currentWeek: 11, totalWeeks: 12, progress: 92, course: "AI-ML", track: "Machine Learning", lastActivity: "15 mins ago", avgScore: 97, status: "active" },
 ];
 
 // Mock Courses
@@ -125,27 +125,27 @@ export const mockAIRecommendations = [
   {
     position: "Senior React Developer",
     candidates: [
-      { id: "t7", name: "Ava Anderson", score: 96, skillsMatch: 95, avatar: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=150&h=150&fit=crop&crop=face" },
-      { id: "t13", name: "Charlotte Harris", score: 86, skillsMatch: 88, avatar: "https://images.unsplash.com/photo-1502823403499-6ccfcf4fb453?w=150&h=150&fit=crop&crop=face" },
-      { id: "t19", name: "Evelyn King", score: 85, skillsMatch: 82, avatar: "https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?w=150&h=150&fit=crop&crop=face" },
+      { id: "t7", name: "Deepika Menon", score: 96, skillsMatch: 95, avatar: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=150&h=150&fit=crop&crop=face" },
+      { id: "t13", name: "Lakshmi Venkat", score: 86, skillsMatch: 88, avatar: "https://images.unsplash.com/photo-1502823403499-6ccfcf4fb453?w=150&h=150&fit=crop&crop=face" },
+      { id: "t19", name: "Nandini Bose", score: 85, skillsMatch: 82, avatar: "https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?w=150&h=150&fit=crop&crop=face" },
     ],
     confidence: 92,
   },
   {
     position: "Python Backend Developer",
     candidates: [
-      { id: "t2", name: "James Wilson", score: 92, skillsMatch: 94, avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop&crop=face" },
-      { id: "t20", name: "Sebastian Scott", score: 88, skillsMatch: 90, avatar: "https://images.unsplash.com/photo-1504257432389-52343af06ae3?w=150&h=150&fit=crop&crop=face" },
-      { id: "t8", name: "William Taylor", score: 74, skillsMatch: 78, avatar: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=150&h=150&fit=crop&crop=face" },
+      { id: "t2", name: "Arjun Reddy", score: 92, skillsMatch: 94, avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop&crop=face" },
+      { id: "t20", name: "Prashanth Varma", score: 88, skillsMatch: 90, avatar: "https://images.unsplash.com/photo-1504257432389-52343af06ae3?w=150&h=150&fit=crop&crop=face" },
+      { id: "t8", name: "Aditya Joshi", score: 74, skillsMatch: 78, avatar: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=150&h=150&fit=crop&crop=face" },
     ],
     confidence: 88,
   },
   {
     position: "Data Scientist",
     candidates: [
-      { id: "t12", name: "Ethan White", score: 94, skillsMatch: 96, avatar: "https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?w=150&h=150&fit=crop&crop=face" },
-      { id: "t21", name: "Victoria Adams", score: 97, skillsMatch: 92, avatar: "https://images.unsplash.com/photo-1488426862026-3ee34a7d66df?w=150&h=150&fit=crop&crop=face" },
-      { id: "t3", name: "Sophia Brown", score: 95, skillsMatch: 90, avatar: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150&h=150&fit=crop&crop=face" },
+      { id: "t12", name: "Nikhil Desai", score: 94, skillsMatch: 96, avatar: "https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?w=150&h=150&fit=crop&crop=face" },
+      { id: "t21", name: "Revathi Srinivasan", score: 97, skillsMatch: 92, avatar: "https://images.unsplash.com/photo-1488426862026-3ee34a7d66df?w=150&h=150&fit=crop&crop=face" },
+      { id: "t3", name: "Ananya Gupta", score: 95, skillsMatch: 90, avatar: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150&h=150&fit=crop&crop=face" },
     ],
     confidence: 95,
   },
@@ -154,21 +154,21 @@ export const mockAIRecommendations = [
 // Mock Interview Pipeline
 export const mockInterviewPipeline = {
   applied: [
-    { id: "ip1", name: "John Smith", position: "React Developer", date: "2024-01-08", avatar: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&h=150&fit=crop&crop=face" },
-    { id: "ip2", name: "Emma Davis", position: "Python Developer", date: "2024-01-09", avatar: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=150&h=150&fit=crop&crop=face" },
+    { id: "ip1", name: "Amit Saxena", position: "React Developer", date: "2024-01-08", avatar: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&h=150&fit=crop&crop=face" },
+    { id: "ip2", name: "Ritu Agarwal", position: "Python Developer", date: "2024-01-09", avatar: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=150&h=150&fit=crop&crop=face" },
   ],
   phoneScreen: [
-    { id: "ip3", name: "Michael Brown", position: "Full Stack Developer", date: "2024-01-07", avatar: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=150&h=150&fit=crop&crop=face" },
+    { id: "ip3", name: "Manish Tiwari", position: "Full Stack Developer", date: "2024-01-07", avatar: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=150&h=150&fit=crop&crop=face" },
   ],
   technical: [
-    { id: "ip4", name: "Sarah Wilson", position: "Data Scientist", date: "2024-01-05", avatar: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150&h=150&fit=crop&crop=face" },
-    { id: "ip5", name: "David Lee", position: "React Developer", date: "2024-01-06", avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop&crop=face" },
+    { id: "ip4", name: "Shreya Kapoor", position: "Data Scientist", date: "2024-01-05", avatar: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150&h=150&fit=crop&crop=face" },
+    { id: "ip5", name: "Rajesh Khanna", position: "React Developer", date: "2024-01-06", avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop&crop=face" },
   ],
   final: [
-    { id: "ip6", name: "Lisa Chen", position: "DevOps Engineer", date: "2024-01-04", avatar: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&h=150&fit=crop&crop=face" },
+    { id: "ip6", name: "Gayatri Devi", position: "DevOps Engineer", date: "2024-01-04", avatar: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&h=150&fit=crop&crop=face" },
   ],
   offer: [
-    { id: "ip7", name: "James Taylor", position: "Python Developer", date: "2024-01-03", avatar: "https://images.unsplash.com/photo-1519345182560-3f2917c472ef?w=150&h=150&fit=crop&crop=face" },
+    { id: "ip7", name: "Vivek Oberoi", position: "Python Developer", date: "2024-01-03", avatar: "https://images.unsplash.com/photo-1519345182560-3f2917c472ef?w=150&h=150&fit=crop&crop=face" },
   ],
 };
 
@@ -217,11 +217,11 @@ export const mockSystemLogs = [
 
 // Mock Grading Queue
 export const mockGradingQueue = [
-  { id: "gq1", student: "Emily Johnson", assignment: "React Router Implementation", submittedAt: "2024-01-10 09:15:00", course: "React Development" },
-  { id: "gq2", student: "James Wilson", assignment: "Django REST API Project", submittedAt: "2024-01-10 08:45:00", course: "Python Full Stack" },
-  { id: "gq3", student: "Sophia Brown", assignment: "ML Model Training Exercise", submittedAt: "2024-01-09 23:30:00", course: "AI/ML Fundamentals" },
-  { id: "gq4", student: "Liam Davis", assignment: "Express.js Middleware", submittedAt: "2024-01-09 22:15:00", course: "Node.js Backend" },
-  { id: "gq5", student: "Olivia Martinez", assignment: "Binary Search Tree", submittedAt: "2024-01-09 20:00:00", course: "Data Structures" },
+  { id: "gq1", student: "Priya Sharma", assignment: "React Router Implementation", submittedAt: "2024-01-10 09:15:00", course: "React Development" },
+  { id: "gq2", student: "Arjun Reddy", assignment: "Django REST API Project", submittedAt: "2024-01-10 08:45:00", course: "Python Full Stack" },
+  { id: "gq3", student: "Ananya Gupta", assignment: "ML Model Training Exercise", submittedAt: "2024-01-09 23:30:00", course: "AI/ML Fundamentals" },
+  { id: "gq4", student: "Rahul Verma", assignment: "Express.js Middleware", submittedAt: "2024-01-09 22:15:00", course: "Node.js Backend" },
+  { id: "gq5", student: "Kavitha Nair", assignment: "Binary Search Tree", submittedAt: "2024-01-09 20:00:00", course: "Data Structures" },
 ];
 
 // Score Distribution Data
