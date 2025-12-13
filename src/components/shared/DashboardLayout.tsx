@@ -74,7 +74,7 @@ const DashboardLayout: React.FC<DashboardLayoutProps> = ({ children, title }) =>
                 <GraduationCap className="h-5 w-5 text-primary-foreground" />
               </div>
               <div className="hidden sm:block">
-                <h1 className="text-lg font-semibold text-foreground">{title}</h1>
+                <h1 className="text-lg font-semibold text-foreground">TALENT FUSION</h1>
               </div>
             </Link>
           </div>
