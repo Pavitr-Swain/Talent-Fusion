@@ -230,6 +230,11 @@ const Login: React.FC = () => {
               ))}
             </CardContent>
           </Card>
+
+          {/* Credit */}
+          <p className="text-center text-sm text-muted-foreground">
+            Made by <span className="font-medium text-foreground">pavitr-swain</span>
+          </p>
         </div>
       </div>
     </div>

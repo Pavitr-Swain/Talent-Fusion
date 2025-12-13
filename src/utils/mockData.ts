@@ -4,7 +4,7 @@ export const mockUsers = [
     id: "1",
     email: "admin@company.com",
     password: "admin123",
-    name: "Alex Thompson",
+    name: "Rupesh",
     role: "admin",
     avatar: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&h=150&fit=crop&crop=face",
     permissions: ["all"],
@@ -13,7 +13,7 @@ export const mockUsers = [
     id: "2",
     email: "hr@company.com",
     password: "hr123",
-    name: "Sarah Mitchell",
+    name: "Asiya Ashraf",
     role: "hr",
     avatar: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150&h=150&fit=crop&crop=face",
     permissions: ["manage_trainees", "view_analytics", "manage_hiring"],
@@ -22,7 +22,7 @@ export const mockUsers = [
     id: "3",
     email: "facilitator@company.com",
     password: "facilitator123",
-    name: "Michael Chen",
+    name: "Amarathana Shree",
     role: "facilitator",
     avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop&crop=face",
     permissions: ["manage_courses", "grade_assignments", "create_tests"],
@@ -74,11 +74,11 @@ export const mockTrainees = [
 
 // Mock Courses
 export const mockCourses = [
-  { id: "c1", name: "Python Full Stack Development", description: "Complete Python web development with Django and Flask", duration: "12 weeks", students: 45, completionRate: 78, status: "active", instructor: "Michael Chen" },
-  { id: "c2", name: "React Development Mastery", description: "Advanced React with TypeScript and modern tooling", duration: "12 weeks", students: 52, completionRate: 82, status: "active", instructor: "Michael Chen" },
-  { id: "c3", name: "Node.js Backend Engineering", description: "Scalable backend systems with Node.js and Express", duration: "10 weeks", students: 38, completionRate: 75, status: "active", instructor: "Michael Chen" },
-  { id: "c4", name: "AI/ML Fundamentals", description: "Machine learning basics with Python and TensorFlow", duration: "14 weeks", students: 28, completionRate: 65, status: "active", instructor: "Michael Chen" },
-  { id: "c5", name: "Data Structures & Algorithms", description: "Essential CS fundamentals for technical interviews", duration: "8 weeks", students: 60, completionRate: 88, status: "active", instructor: "Michael Chen" },
+  { id: "c1", name: "Python Full Stack Development", description: "Complete Python web development with Django and Flask", duration: "12 weeks", students: 45, completionRate: 78, status: "active", instructor: "Amarathana Shree" },
+  { id: "c2", name: "React Development Mastery", description: "Advanced React with TypeScript and modern tooling", duration: "12 weeks", students: 52, completionRate: 82, status: "active", instructor: "Amarathana Shree" },
+  { id: "c3", name: "Node.js Backend Engineering", description: "Scalable backend systems with Node.js and Express", duration: "10 weeks", students: 38, completionRate: 75, status: "active", instructor: "Amarathana Shree" },
+  { id: "c4", name: "AI/ML Fundamentals", description: "Machine learning basics with Python and TensorFlow", duration: "14 weeks", students: 28, completionRate: 65, status: "active", instructor: "Amarathana Shree" },
+  { id: "c5", name: "Data Structures & Algorithms", description: "Essential CS fundamentals for technical interviews", duration: "8 weeks", students: 60, completionRate: 88, status: "active", instructor: "Amarathana Shree" },
 ];
 
 // Mock Test Results for Trainee
