@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import DashboardLayout from '@/components/shared/DashboardLayout';
 import StatCard from '@/components/shared/StatCard';
 import ProgressBar from '@/components/shared/ProgressBar';
@@ -40,19 +40,27 @@ import {
   ArrowRight,
   Sparkles,
   ChevronRight,
+  MessageSquare,
+  Upload,
+  FileSpreadsheet,
 } from 'lucide-react';
 import { mockTrainees, mockBusinessDemands, mockAIRecommendations, mockInterviewPipeline } from '@/utils/mockData';
 import { cn } from '@/lib/utils';
+import SkillSearchChatbot from '@/components/hr/SkillSearchChatbot';
 
 const HRDashboard: React.FC = () => {
   const { user } = useAuth();
   const { toast } = useToast();
   const [selectedTab, setSelectedTab] = useState('overview');
+  const [chatbotOpen, setChatbotOpen] = useState(false);
+  const [demandDialogTab, setDemandDialogTab] = useState('manual');
+  const [uploadedFile, setUploadedFile] = useState<File | null>(null);
+  const fileInputRef = useRef<HTMLInputElement>(null);
 
   const activeTrainees = mockTrainees.filter(t => t.status === 'active').length;
   const graduatingThisMonth = mockTrainees.filter(t => t.progress >= 90).length;
   const readyForHiring = mockTrainees.filter(t => t.progress >= 80 && t.avgScore >= 85).length;
-  const openPositions = mockBusinessDemands.filter(d => d.status === 'open').length;
+  const openPositions = mockBusinessDemands.filter(d => d.status === 'active').length;
 
   const getUrgencyBadge = (urgency: string) => {
     const styles: Record<string, string> = {
@@ -65,11 +73,34 @@ const HRDashboard: React.FC = () => {
 
   const getStatusBadge = (status: string) => {
     const styles: Record<string, string> = {
-      open: 'bg-success/10 text-success',
-      'in-progress': 'bg-primary/10 text-primary',
-      filled: 'bg-muted text-muted-foreground',
+      active: 'bg-success/10 text-success',
+      inactive: 'bg-muted text-muted-foreground',
+      filled: 'bg-primary/10 text-primary',
     };
-    return styles[status] || styles.open;
+    return styles[status] || styles.active;
+  };
+
+  const handleFileUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
+    if (file) {
+      if (file.name.endsWith('.xlsx') || file.name.endsWith('.xls') || file.name.endsWith('.csv')) {
+        setUploadedFile(file);
+        toast({ title: 'File uploaded', description: `${file.name} is ready to process` });
+      } else {
+        toast({ title: 'Invalid file type', description: 'Please upload an Excel or CSV file', variant: 'destructive' });
+      }
+    }
+  };
+
+  const handleProcessFile = () => {
+    if (uploadedFile) {
+      toast({ title: 'Processing file', description: `Extracting data from ${uploadedFile.name}...` });
+      // Simulate processing
+      setTimeout(() => {
+        toast({ title: 'Data imported', description: '15 demands extracted from file' });
+        setUploadedFile(null);
+      }, 1500);
+    }
   };
 
   const pipelineStages = [
@@ -98,6 +129,10 @@ const HRDashboard: React.FC = () => {
               <FileDown className="h-4 w-4 mr-2" />
               Export Report
             </Button>
+            <Button variant="outline" onClick={() => setChatbotOpen(true)}>
+              <MessageSquare className="h-4 w-4 mr-2" />
+              AI Search
+            </Button>
             <Dialog>
               <DialogTrigger asChild>
                 <Button>
@@ -105,47 +140,119 @@ const HRDashboard: React.FC = () => {
                   New Demand
                 </Button>
               </DialogTrigger>
-              <DialogContent className="sm:max-w-md bg-card">
+              <DialogContent className="sm:max-w-lg bg-card">
                 <DialogHeader>
                   <DialogTitle>Create Business Demand</DialogTitle>
                   <DialogDescription>Add a new hiring requirement</DialogDescription>
                 </DialogHeader>
-                <div className="space-y-4 py-4">
-                  <div className="space-y-2">
-                    <Label>Position Title</Label>
-                    <Input placeholder="e.g., Senior React Developer" />
-                  </div>
-                  <div className="grid grid-cols-2 gap-4">
+                <Tabs value={demandDialogTab} onValueChange={setDemandDialogTab} className="mt-4">
+                  <TabsList className="grid w-full grid-cols-2">
+                    <TabsTrigger value="manual" className="flex items-center gap-2">
+                      <Plus className="h-4 w-4" />
+                      Manual Entry
+                    </TabsTrigger>
+                    <TabsTrigger value="upload" className="flex items-center gap-2">
+                      <Upload className="h-4 w-4" />
+                      Excel Upload
+                    </TabsTrigger>
+                  </TabsList>
+                  <TabsContent value="manual" className="space-y-4 mt-4">
                     <div className="space-y-2">
-                      <Label>Required Count</Label>
-                      <Input type="number" placeholder="5" />
+                      <Label>Position Title</Label>
+                      <Input placeholder="e.g., Senior React Developer" />
+                    </div>
+                    <div className="grid grid-cols-2 gap-4">
+                      <div className="space-y-2">
+                        <Label>Required Count</Label>
+                        <Input type="number" placeholder="5" />
+                      </div>
+                      <div className="space-y-2">
+                        <Label>Urgency</Label>
+                        <Select>
+                          <SelectTrigger>
+                            <SelectValue placeholder="Select" />
+                          </SelectTrigger>
+                          <SelectContent>
+                            <SelectItem value="high">High</SelectItem>
+                            <SelectItem value="medium">Medium</SelectItem>
+                            <SelectItem value="low">Low</SelectItem>
+                          </SelectContent>
+                        </Select>
+                      </div>
+                    </div>
+                    <div className="grid grid-cols-2 gap-4">
+                      <div className="space-y-2">
+                        <Label>Department</Label>
+                        <Input placeholder="e.g., Engineering" />
+                      </div>
+                      <div className="space-y-2">
+                        <Label>Status</Label>
+                        <Select>
+                          <SelectTrigger>
+                            <SelectValue placeholder="Select" />
+                          </SelectTrigger>
+                          <SelectContent>
+                            <SelectItem value="active">Active</SelectItem>
+                            <SelectItem value="inactive">Inactive</SelectItem>
+                          </SelectContent>
+                        </Select>
+                      </div>
                     </div>
                     <div className="space-y-2">
-                      <Label>Urgency</Label>
-                      <Select>
-                        <SelectTrigger>
-                          <SelectValue placeholder="Select" />
-                        </SelectTrigger>
-                        <SelectContent>
-                          <SelectItem value="high">High</SelectItem>
-                          <SelectItem value="medium">Medium</SelectItem>
-                          <SelectItem value="low">Low</SelectItem>
-                        </SelectContent>
-                      </Select>
+                      <Label>Deadline</Label>
+                      <Input type="date" />
                     </div>
-                  </div>
-                  <div className="space-y-2">
-                    <Label>Department</Label>
-                    <Input placeholder="e.g., Engineering" />
-                  </div>
-                  <div className="space-y-2">
-                    <Label>Deadline</Label>
-                    <Input type="date" />
-                  </div>
-                  <Button className="w-full" onClick={() => toast({ title: 'Demand Created', description: 'New hiring demand has been added.' })}>
-                    Create Demand
-                  </Button>
-                </div>
+                    <Button className="w-full" onClick={() => toast({ title: 'Demand Created', description: 'New hiring demand has been added.' })}>
+                      Create Demand
+                    </Button>
+                  </TabsContent>
+                  <TabsContent value="upload" className="space-y-4 mt-4">
+                    <div className="border-2 border-dashed border-border rounded-lg p-6 text-center">
+                      <input
+                        type="file"
+                        ref={fileInputRef}
+                        onChange={handleFileUpload}
+                        accept=".xlsx,.xls,.csv"
+                        className="hidden"
+                      />
+                      <FileSpreadsheet className="h-12 w-12 mx-auto text-muted-foreground mb-4" />
+                      {uploadedFile ? (
+                        <div className="space-y-2">
+                          <p className="font-medium text-foreground">{uploadedFile.name}</p>
+                          <p className="text-sm text-muted-foreground">
+                            {(uploadedFile.size / 1024).toFixed(2)} KB
+                          </p>
+                          <div className="flex gap-2 justify-center mt-4">
+                            <Button variant="outline" onClick={() => setUploadedFile(null)}>
+                              Remove
+                            </Button>
+                            <Button onClick={handleProcessFile}>
+                              Process File
+                            </Button>
+                          </div>
+                        </div>
+                      ) : (
+                        <div className="space-y-2">
+                          <p className="text-muted-foreground">
+                            Drag and drop your Excel file here, or
+                          </p>
+                          <Button variant="outline" onClick={() => fileInputRef.current?.click()}>
+                            Browse Files
+                          </Button>
+                          <p className="text-xs text-muted-foreground mt-2">
+                            Supports .xlsx, .xls, and .csv files
+                          </p>
+                        </div>
+                      )}
+                    </div>
+                    <div className="bg-muted/50 rounded-lg p-4">
+                      <p className="text-sm font-medium mb-2">Expected Format:</p>
+                      <p className="text-xs text-muted-foreground">
+                        Your Excel file should contain columns: Position, Count, Urgency, Department, Deadline, Status
+                      </p>
+                    </div>
+                  </TabsContent>
+                </Tabs>
               </DialogContent>
             </Dialog>
           </div>
@@ -174,7 +281,7 @@ const HRDashboard: React.FC = () => {
             iconClassName="bg-success/10 text-success"
           />
           <StatCard
-            title="Open Positions"
+            title="Active Positions"
             value={openPositions}
             icon={<Briefcase className="h-6 w-6" />}
             iconClassName="bg-warning/10 text-warning"
@@ -476,6 +583,9 @@ const HRDashboard: React.FC = () => {
           </TabsContent>
         </Tabs>
       </div>
+      
+      {/* AI Chatbot */}
+      <SkillSearchChatbot isOpen={chatbotOpen} onClose={() => setChatbotOpen(false)} />
     </DashboardLayout>
   );
 };

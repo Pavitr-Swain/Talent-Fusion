@@ -113,11 +113,11 @@ export const mockNotifications = [
 
 // Mock Business Demands (HR)
 export const mockBusinessDemands = [
-  { id: "bd1", position: "Senior React Developer", count: 5, urgency: "high", status: "open", department: "Engineering", deadline: "2024-02-01" },
-  { id: "bd2", position: "Python Backend Developer", count: 3, urgency: "medium", status: "in-progress", department: "Engineering", deadline: "2024-02-15" },
-  { id: "bd3", position: "Data Scientist", count: 2, urgency: "high", status: "open", department: "Data Science", deadline: "2024-01-25" },
-  { id: "bd4", position: "DevOps Engineer", count: 2, urgency: "low", status: "open", department: "Operations", deadline: "2024-03-01" },
-  { id: "bd5", position: "Full Stack Developer", count: 4, urgency: "medium", status: "in-progress", department: "Engineering", deadline: "2024-02-10" },
+  { id: "bd1", position: "Senior React Developer", count: 5, urgency: "high", status: "active", department: "Engineering", deadline: "2024-02-01" },
+  { id: "bd2", position: "Python Backend Developer", count: 3, urgency: "medium", status: "inactive", department: "Engineering", deadline: "2024-02-15" },
+  { id: "bd3", position: "Data Scientist", count: 2, urgency: "high", status: "active", department: "Data Science", deadline: "2024-01-25" },
+  { id: "bd4", position: "DevOps Engineer", count: 2, urgency: "low", status: "active", department: "Operations", deadline: "2024-03-01" },
+  { id: "bd5", position: "Full Stack Developer", count: 4, urgency: "medium", status: "inactive", department: "Engineering", deadline: "2024-02-10" },
 ];
 
 // Mock AI Recommendations
