@@ -274,7 +274,7 @@ const HRDashboard: React.FC = () => {
             iconClassName="bg-secondary/10 text-secondary"
           />
           <StatCard
-            title="Ready for Hiring"
+            title="Ready for Selection"
             value={readyForHiring}
             icon={<UserCheck className="h-6 w-6" />}
             description="High performers"
@@ -342,7 +342,7 @@ const HRDashboard: React.FC = () => {
                 <CardHeader>
                   <CardTitle className="flex items-center gap-2">
                     <Sparkles className="h-5 w-5 text-secondary" />
-                    AI Suggested Candidates
+                    Suggested Candidates
                   </CardTitle>
                   <CardDescription>Top matches based on skills and performance</CardDescription>
                 </CardHeader>
